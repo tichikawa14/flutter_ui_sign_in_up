@@ -39,6 +39,10 @@ class WelcomePage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 32),
                 child: _SignInForm(),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 64),
+                child: _Footer(),
               )
             ],
           ),
@@ -151,7 +155,7 @@ class _HeaderTitle extends StatelessWidget {
     return Column(
       children: [
         Text(
-          'welocome',
+          'welcome',
           style: Theme.of(context).textTheme.headline4!.copyWith(
             color: kTextColorPrimary,
             fontWeight: FontWeight.w500,
@@ -327,6 +331,26 @@ class _SignInForm extends StatelessWidget {
           ],
         )
       ],
+    );
+  }
+}
+
+class _Footer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          'Don\'t have Account?',
+          style: Theme.of(context).textTheme.bodyText2!.copyWith(color: kTextColorSecondary),
+        ),
+        SizedBox(width: 4),
+        Text(
+          'Sign up',
+          style: Theme.of(context).textTheme.bodyText2!.copyWith(color: kTextColorPrimary),
+        )
+      ]
     );
   }
 }
